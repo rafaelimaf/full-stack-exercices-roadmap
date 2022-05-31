@@ -5,4 +5,6 @@ const router = express();
 
 router.get('/', booksController.getAllBooks);
 
+router.get('/:id', booksController.getBookById);
+
 module.exports = router;

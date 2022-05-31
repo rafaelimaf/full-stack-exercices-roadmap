@@ -9,6 +9,19 @@ const getAllBooks = async (_req, res) => {
   }
 };
 
+const getBookById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const book = await booksService.getBookById(id);
+    return book === null
+      ? res.status(404).json({ message: 'Book not found' })
+      : res.status(200).json(book);
+  } catch (err) {
+    return res.status(404).json({ message: 'Bad request' });
+  }
+};
+
 module.exports = {
-  getAllBooks
+  getAllBooks,
+  getBookById
 };

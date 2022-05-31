@@ -10,6 +10,16 @@ const getAllBooks = async () => {
   }
 };
 
+const getBookById = async (id) => {
+  try {
+    const book = await Book.findByPk(id);
+    return book;
+  } catch (err) {
+    console.log('Erro na service getBookById: ', err.message);
+  }
+};
+
 module.exports = {
-  getAllBooks
+  getAllBooks,
+  getBookById
 };
