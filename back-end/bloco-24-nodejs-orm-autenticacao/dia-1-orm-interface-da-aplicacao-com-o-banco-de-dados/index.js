@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const Router = require('./routes');
 
 const PORT = '3000';
 
@@ -15,6 +16,8 @@ app.get('/', async (_req, res) => {
     return res.status(400).json({ message: 'Internal server error' });
   }
 });
+
+app.use('/books', Router.booksRouter);
 
 app.listen(PORT, () => {
   console.log('Server is up on port:', PORT);
