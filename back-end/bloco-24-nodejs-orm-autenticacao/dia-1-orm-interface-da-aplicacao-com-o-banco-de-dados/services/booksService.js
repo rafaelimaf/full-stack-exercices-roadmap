@@ -42,9 +42,24 @@ const editBook = async (id, book) => {
   }
 };
 
+const deleteBook = async (id) => {
+  try {
+    const deletedBook = await Book.destroy({
+      where: {
+        id
+      }
+    });
+    console.log(deletedBook);
+    return deletedBook;
+  } catch (err) {
+    console.log('Erro na service deleteBook: ', err.message);
+  }
+};
+
 module.exports = {
   getAllBooks,
   getBookById,
   createBook,
-  editBook
+  editBook,
+  deleteBook
 };

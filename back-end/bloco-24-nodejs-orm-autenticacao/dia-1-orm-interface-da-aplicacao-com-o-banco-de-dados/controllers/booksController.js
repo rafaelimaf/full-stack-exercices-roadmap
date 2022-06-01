@@ -56,9 +56,24 @@ const editBook = async (req, res) => {
   }
 };
 
+const deleteBook = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const deletedBook = await booksService.deleteBook(id);
+    return deletedBook === 0
+      ? res.status(404).json({ message: 'Book not found' })
+      : res.status(200).json({ message: 'Book was deleted with sucess' });
+  } catch (err) {
+    console.log('Erro no controller deleteBook: ', err.message);
+    return res.status(400).json({ message: 'Bad request' });
+  }
+};
+
 module.exports = {
   getAllBooks,
   getBookById,
   createBook,
-  editBook
+  editBook,
+  deleteBook
 };
