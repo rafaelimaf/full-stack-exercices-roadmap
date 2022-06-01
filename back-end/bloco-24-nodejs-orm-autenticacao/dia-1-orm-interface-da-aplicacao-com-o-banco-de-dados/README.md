@@ -23,7 +23,7 @@ npm install
 docker-compose up -d
 ```
 
-#### Quando realizar a conexão com o bando de dados, passe as variáveis de ambiente do docker-compose onde:
+#### Quando realizar a conexão com o bando de dados, ele irá ler o arquivo config.json dentro da pasta ./config onde:
 - HOST=localhost;
 - USERNAME=root
 - PASSWORD=docker
@@ -36,7 +36,21 @@ docker-compose up -d
 docker exec -it node-dockerized bash
 ```
 
-#### Na cli do container, digite o comando:
+#### Na cli do container, digite os comandos:
+```cli
+npx sequelize-cli db:create
+```
+> Isso fará com que o banco de dados seja criado(isso se já houver sido criada a conexão nos passos anteriores)
+```cli
+npx sequelize-cli db:migrate
+```
+> Esse comando fará a migration mais recente ser executada
+```cli
+npx sequelize-cli db:seed:all
+```
+> Com esse comando a tabela será populada com os dados iniciais estabelecidos pela seed
+
+#### Por fim execute também no terminal do container o comando:
 ```cli
 npm run dev
 ```
