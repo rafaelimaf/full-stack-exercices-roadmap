@@ -13,23 +13,25 @@ Criar uma API simples, onde será possível criar um livro ou listar todos os li
 
 ## Executando o exercício
 #### Para executar a aplicação, basta rodar os seguintes comandos:
+> Na raiz do clone
 ```cli
-  cd /dia-1-orm-interface-da-aplicacao-com-o-banco-de-dados
- ```
-```cli
-  npm install
+cd back-end/bloco-24-nodejs-orm-autenticacao/dia-1-orm-interface-da-aplicacao-com-o-banco-de-dados/
 ```
 ```cli
-  docker-compose up -d
+npm install
+```
+```cli
+docker-compose up -d
 ```
 
-#### Quando realizar a conexão com o bando de dados, passe as variáveis de ambiente do docker-compose onde:
+#### Realize a conexão com o bando de dados, passe as variáveis de ambiente do docker-compose onde:
 - HOST=localhost;
 - USERNAME=root
 - PASSWORD=docker
 - PORT=3306
 - DATABASE=sequelize_example
-> Procure não mudar as variáveis de ambientes
+> - Procure não mudar as variáveis de ambiente<br/>
+> - É recomendável utilizar a extensão `MySQL` de Weijen Chen para se conectar diretamente pelo `vsCode`
 
 #### Se tudo ocorrer corretamente, digite o seguinte comando no terminal:
 ```cli
