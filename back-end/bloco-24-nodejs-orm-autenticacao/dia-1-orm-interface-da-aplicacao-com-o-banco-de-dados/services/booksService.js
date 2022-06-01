@@ -19,7 +19,18 @@ const getBookById = async (id) => {
   }
 };
 
+const createBook = async (book) => {
+  try {
+    const createdBook = await Book.create(book);
+    console.log(createdBook);
+    return createdBook;
+  } catch (err) {
+    console.log('Erro na service createBook: ', err.message);
+  }
+};
+
 module.exports = {
   getAllBooks,
-  getBookById
+  getBookById,
+  createBook
 };
