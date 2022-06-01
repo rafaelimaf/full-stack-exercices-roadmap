@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "docker",
+    "database": "sequelize_example",
+    "host": "db",
+    "dialect": "mysql"
+  }
+}
