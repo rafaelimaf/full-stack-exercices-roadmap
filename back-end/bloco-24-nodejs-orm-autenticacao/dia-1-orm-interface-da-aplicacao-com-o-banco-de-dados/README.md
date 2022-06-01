@@ -1,6 +1,6 @@
-## Exercício 24.1
+# Exercício 24.1
 
-### Objetivo
+## Objetivo
 Criar uma API simples, onde será possível criar um livro ou listar todos os livros da base de dados. Utilizar MySQL como banco de dados e Sequelize como ORM. Para a sua realização, foram praticados conceitos de back-end como:
 
 - Configuração do node com `npm init -y`;
@@ -11,7 +11,7 @@ Criar uma API simples, onde será possível criar um livro ou listar todos os li
 - Utilização da camada `model` e portanto camada que faz contado com o banco de dados, a partir de uma `ORM`, neste caso o `sequelize`;
 - Criação, Leitura, Atualização e Exclusão de dados da API com queries e métodos do prórpio `sequelize`;
 
-### Executando o exercício
+## Executando o exercício
 #### Para executar a aplicação, basta rodar os seguintes comandos:
 ```cli
   cd /dia-1-orm-interface-da-aplicacao-com-o-banco-de-dados
