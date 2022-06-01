@@ -29,8 +29,22 @@ const createBook = async (book) => {
   }
 };
 
+const editBook = async (id, book) => {
+  try {
+    const [editedBook] = await Book.update(book, {
+      where: {
+        id
+      }
+    });
+    return editedBook;
+  } catch (err) {
+    console.log('Erro na service editBook: ', err.message);
+  }
+};
+
 module.exports = {
   getAllBooks,
   getBookById,
-  createBook
+  createBook,
+  editBook
 };

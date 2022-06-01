@@ -38,8 +38,27 @@ const createBook = async (req, res) => {
   }
 };
 
+const editBook = async (req, res) => {
+  const { id } = req.params;
+  const { title, author, pageQuantity } = req.body;
+  const newBook = {
+    title, author, pageQuantity
+  };
+
+  try {
+    const editedBook = await booksService.editBook(id, newBook);
+    return editedBook === 0
+      ? res.status(404).json({ message: 'Book not found' })
+      : res.status(200).json({ message: 'Book was edited with sucess' });
+  } catch (err) {
+    console.log('Erro no controller editBook: ', err.message);
+    return res.status(400).json({ message: 'Bad request' });
+  }
+};
+
 module.exports = {
   getAllBooks,
   getBookById,
-  createBook
+  createBook,
+  editBook
 };
