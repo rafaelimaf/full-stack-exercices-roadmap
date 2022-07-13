@@ -15,7 +15,7 @@ const getPatientsAndPlans = async () => {
 const getPatientsAndSurgeries = async () => {
   try {
     const patients = await Patient.findAll({
-      include: { model: Surgery, as: 'surgery', through: { attributes: [] } }
+      include: { model: Surgery, as: 'surgeries', through: { attributes: [] } }
     });
     return patients;
   } catch (err) {

@@ -1,5 +1,7 @@
 const patientsRouter = require('./patientsRouter');
+const plansRouter = require('./plansRouter');
 
 module.exports = {
-  patientsRouter
+  patientsRouter,
+  plansRouter
 };
