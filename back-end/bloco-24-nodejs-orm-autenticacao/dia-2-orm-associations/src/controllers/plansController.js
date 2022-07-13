@@ -5,10 +5,10 @@ const getPlanPatientsById = async (req, res) => {
 
   try {
     const planPatients = await plansService.getPlanPatientsById(id);
-    res.status(200).json(planPatients);
+    return res.status(200).json(planPatients);
   } catch (err) {
     console.log('Erro no controller getPlanPatientsById ', err.message);
-    res.status(400).send('Bad request');
+    return res.status(400).send('Bad request');
   }
 };
 
