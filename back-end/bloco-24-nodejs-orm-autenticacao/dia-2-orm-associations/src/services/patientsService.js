@@ -24,7 +24,11 @@ const getPatientsAndPlans = async () => {
 const getPatientsAndSurgeries = async () => {
   try {
     const patients = await Patient.findAll({
-      include: { model: Surgery, as: 'surgeries', through: { attributes: [] } }
+      include: {
+        model: Surgery,
+        as: 'surgeries',
+        attributes: { exclude: ['doctor'] }
+      }
     });
     return patients;
   } catch (err) {
@@ -32,9 +36,9 @@ const getPatientsAndSurgeries = async () => {
   }
 };
 
-const createPatient = async (patientId, fullname, planId) => {
+const createPatient = async (fullname, planId) => {
   try {
-    const patient = await Patient.create({ patient_id: patientId, fullname, plan_id: planId });
+    const patient = await Patient.create({ fullname, plan_id: planId });
     return patient;
   } catch (err) {
     console.log('Erro na service patientsService.createPatient ', err.message);

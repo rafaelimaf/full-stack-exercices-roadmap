@@ -31,10 +31,10 @@ const getPatientsAndSurgeries = async (req, res) => {
 };
 
 const createPatient = async (req, res) => {
-  const { patientId, fullName, planId } = req.body;
+  const { fullName, planId } = req.body;
 
   try {
-    const patient = await patientsService.createPatient(patientId, fullName, planId);
+    const patient = await patientsService.createPatient(fullName, planId);
     return res.status(201).json(patient);
   } catch (err) {
     console.log('Erro no controller patientsController.createPatient ', err.message);
