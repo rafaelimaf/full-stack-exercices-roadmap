@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   },
   {
-    timeStamps: false
+    timestamps: false
   });
 
   Plan.associate = (models) => {
-    Plan.hasMany(models.Pantient, {
-      foreignKey: 'plan_id', as: 'patient'
+    Plan.hasMany(models.Patient, {
+      foreignKey: 'patient_id', as: 'patients'
     });
   };
 

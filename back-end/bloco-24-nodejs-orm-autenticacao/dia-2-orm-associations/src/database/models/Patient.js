@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    full_name: {
+    fullname: {
       type: DataTypes.STRING
     },
     plan_id: {
@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   },
   {
-    timeStamps: false
+    timestamps: false
   });
 
   Patient.associate = (models) => {
