@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   PatientSurgery.associate = (models) => {
     models.Surgery.hasMany(models.Patient, {
       foreignKey: 'patient_id',
-      as: 'patient',
+      as: 'patients',
       otherKey: 'surgery_id',
       through: PatientSurgery
     });
@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   PatientSurgery.associate = (models) => {
     models.Patient.belongsToMany(models.Surgery, {
       foreignKey: 'surgery_id',
-      as: 'surgery',
+      as: 'surgeries',
       otherKey: 'patient_id',
       through: PatientSurgery
     });

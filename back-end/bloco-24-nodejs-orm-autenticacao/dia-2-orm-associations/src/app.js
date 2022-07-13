@@ -18,4 +18,6 @@ app.get('/', (req, res) => {
 
 app.use('/patients', Router.patientsRouter);
 
+app.use('/plans', Router.plansRouter);
+
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
