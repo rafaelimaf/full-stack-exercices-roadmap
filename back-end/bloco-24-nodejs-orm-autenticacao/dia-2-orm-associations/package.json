@@ -2,12 +2,12 @@
   "name": "dia-2-orm-associations",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "compose": "docker-compose down && docker-compose up -d",
     "node": "docker exec -it node-dockerized bash",
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon ./src/app.js"
   },
   "keywords": [],
   "author": "",
