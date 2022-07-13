@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   PatientSurgery.associate = (models) => {
-    models.Surgery.hasMany(models.Patient, {
+    models.Surgery.belongsToMany(models.Patient, {
       as: 'patients',
       foreignKey: 'surgery_id',
       otherKey: 'patient_id',

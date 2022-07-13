@@ -20,4 +20,6 @@ app.use('/patients', Router.patientsRouter);
 
 app.use('/plans', Router.plansRouter);
 
+app.use('/surgeries', Router.surgeriesRouter);
+
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
