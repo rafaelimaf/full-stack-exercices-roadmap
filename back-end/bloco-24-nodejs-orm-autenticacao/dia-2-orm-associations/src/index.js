@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const Router = require('./routes');
 
 const PORT = 3000;
 
@@ -14,5 +15,7 @@ app.get('/', (req, res) => {
     res.status(400).json({ message: 'Internal Server Error: ', err });
   }
 });
+
+app.use('/patients', Router.patientsRouter);
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
