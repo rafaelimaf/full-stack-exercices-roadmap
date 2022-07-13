@@ -1,6 +1,6 @@
-const { Patient, Plan } = require('../database/models');
+const { Patient, Plan, Surgery } = require('../database/models');
 
-const getAll = async () => {
+const getPatientsAndPlans = async () => {
   try {
     const patients = await Patient.findAll({
       include: { model: Plan, as: 'plan' },
@@ -8,10 +8,22 @@ const getAll = async () => {
     });
     return patients;
   } catch (err) {
-    console.log('Erro na service patientsService.getAll ', err.message);
+    console.log('Erro na service patientsService.getPatientsAndPlans ', err.message);
+  }
+};
+
+const getPatientsAndSurgeries = async () => {
+  try {
+    const patients = await Patient.findAll({
+      include: { model: Surgery, as: 'surgery', through: { attributes: [] } }
+    });
+    return patients;
+  } catch (err) {
+    console.log('Erro na service patientsService.getPatientsAndSurgeries ', err.message);
   }
 };
 
 module.exports = {
-  getAll
+  getPatientsAndPlans,
+  getPatientsAndSurgeries
 };

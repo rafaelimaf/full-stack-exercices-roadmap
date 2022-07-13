@@ -3,6 +3,8 @@ const patientsController = require('../controllers/patientsController');
 
 const router = express();
 
-router.get('/', patientsController.getAll);
+router.get('/plans', patientsController.getPatientsAndPlans);
+
+router.get('/surgeries', patientsController.getPatientsAndSurgeries);
 
 module.exports = router;
