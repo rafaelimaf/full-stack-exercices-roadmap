@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql-dockerized
+    environment:
+      - MYSQL_ROOT_PASSWORD=docker
+    ports:
+      - 3306:3306
+  api:
+    image: node:16
+    container_name: node-dockerized
+    environment:
+      - DB_HOST=db
+      - DB_NAME=sequelize_example
+      - DB_USER=root
+      - DB_PASSWORD=docker
+      - SERVER_PORT=3000
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/app
+    working_dir: /usr/app
+    command: bash
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
