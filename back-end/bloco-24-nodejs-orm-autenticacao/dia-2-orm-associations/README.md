@@ -1,6 +1,6 @@
-## Exercício 24.2
+# Exercício 24.2
 
-### Objetivo
+## Objetivo
 Nesse exercício será criado uma API que será responsável pela gestão de um sistema de saúde. Nesse sistema terão pacientes, cada um com seu plano. Cada paciente pode ter realizado várias cirurgias, que por sua vez, devem ser listadas e categorizadas. Serão exercitados através desse projeto as seguintes habilidades:
 
 - Criação de `modelos`;
@@ -9,7 +9,7 @@ Nesse exercício será criado uma API que será responsável pela gestão de um 
 - Relacionar dois modelos com `belongsToMany`;
 - Através de `associations`, exercitar conceitos de relacionamentos `1:1`, `1:N` e `N:N`;
 
-### Dependências
+## Dependências
 Antes de realizar a clonagem do projeto, e de poder executar os passos seguintes, é necessário que você tenha instalado alguns programas:
 
 - [Visual Studio Code](https://code.visualstudio.com/download)
@@ -23,7 +23,7 @@ Após instalar o Visual Studio Code, instale algumas extensões que serão neces
 - [Database Client](https://github.com/cweijan/vscode-database-client)
 - [Thunder Client](https://github.com/rangav/thunder-client-support)
 
-### Configurando
+## Configurando
 #### Após clonar o projeto, na raíz do clone(`full-stack-exercises-roadmap`), execute os seguintes comandos:
 > Para que você seja levado ao diretório do exercício
 ```cli
@@ -72,7 +72,7 @@ npx sequelize-cli db:migrate
 npx sequelize-cli db:seed:all
 ```
 
-### Executando
+## Executando
 Se não houver nenhum erro o banco de dados deverá estar populado nesse momento, com todas as tabelas necessárias. Para realizar as requisições, utilize a extensão `Thunder Client`.
 
 #### Agora com o projeto configurado, basta realizar as requisições:
