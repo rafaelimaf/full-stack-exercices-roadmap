@@ -48,7 +48,7 @@ npm run node
 npm run start
 ```
 
-#### Divida o terminal e no mesmo bash do container node:dockerized digite os seguintes comandos:
+#### Divida o terminal e no mesmo bash do container node-dockerized digite os seguintes comandos:
 > Esse comando derrubará qualquer banco de dados existente
 ```cli
 npx sequelize-cli db:drop
