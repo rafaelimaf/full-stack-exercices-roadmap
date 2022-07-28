@@ -3,7 +3,7 @@ const readLine = require('readline-sync');
 const measures = [
   { name: 'Conversor de Comprimento', measure: './length' },
   { name: 'Conversor de Massa', measure: './mass' },
-  { name: 'Conversor de Volume', measure: './capacity' }
+  { name: 'Conversor de Capacidade', measure: './capacity' }
 ];
 
 const chosenMeasure = readLine.keyInSelect(measures.map(measure => measure.name), 'Qual conversor você deseja utilizar?');
