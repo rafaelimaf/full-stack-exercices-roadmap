@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  node:
+    image: node:16
+    ports:
+    - 3000:3000
+    container_name: node-dockerized
+    volumes:
+      - ./:/usr/app
+    working_dir: /usr/app
+    command: bash
+    tty: true
+    stdin_open: true
