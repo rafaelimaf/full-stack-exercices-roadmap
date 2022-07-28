@@ -11,7 +11,7 @@ const chosenMeasure = readLine.keyInSelect(measures.map(measure => measure.name)
 const measurementUnits = require(measures[chosenMeasure].measure);
 const converter = Object.values(measurementUnits)[0];
 
-function measurementConverter (converter:any) {
+function measureConverter (converter:any) {
   const measure = readLine.question('Qual o valor da sua medida?');
 
   const baseUnit = readLine.keyInSelect(Object.values(converter), 'Qual a unidade de medida de seu valor?');
@@ -30,4 +30,4 @@ function measurementConverter (converter:any) {
   return console.log(`O valor de sua medida convertida é ${result + unit}`);
 }
 
-measurementConverter(converter);
+measureConverter(converter);
