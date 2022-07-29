@@ -57,13 +57,13 @@ npm run characters
 ### seasonFinder
 Um buscador de estações do ano baseado no mês e hemisfério que você se encontra. Basta preencher as perguntas no terminal, após rodar o comando:
 ```cli
-npm run season-finder
+npm run seasons
 ```
 
 ### measureConverter
 Esse é o mini projeto mais complexo dentre todos os outros deste exercício. Aqui a partir do comando abaixo, você poderá escolher um tipo de conversor de medidas e realizar a conversão de um valor, de uma unidade para outra.
 ```cli
-npm run measure-converter
+npm run converter
 ```
 
 ## Tecnologias Utilizadas
